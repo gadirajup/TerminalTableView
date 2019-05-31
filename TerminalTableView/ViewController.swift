@@ -17,7 +17,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAdd))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    @objc func handleAdd() {
+        let vc = CommandsViewController()
+        vc.terminalViewController = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func addCommand(_ command: Command) {
+        commands.append(command)
     }
 }
 
