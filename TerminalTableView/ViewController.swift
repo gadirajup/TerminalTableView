@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var commands = [Command]()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var output: UILabel!
     
@@ -17,7 +19,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+}
 
-
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commands.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cmd = commands[indexPath.row]
+        
+        cell.textLabel?.text = cmd.friendlyName
+        cell.detailTextLabel?.text = cmd.summary
+        
+        if cmd.mustBeFirst {
+            cell.textLabel?.textColor = .blue
+        }
+        
+        return cell
+    }
 }
 
