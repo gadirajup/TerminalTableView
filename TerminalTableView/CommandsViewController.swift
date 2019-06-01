@@ -18,8 +18,8 @@ class CommandsViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        let ps = Command(friendlyName: "Show all processes", rootCommand: "ps aux", mustBeFirst: true)
-        let less = Command(friendlyName: "Use Scroll View", rootCommand: "less", mustBeFirst: false)
+        let ps = Command(friendlyName: "Show all processes", rootCommand: "ps aux", mustBeFirst: true, options: [])
+        let less = Command(friendlyName: "Use Scroll View", rootCommand: "less", mustBeFirst: false, options: [])
         
         commands.append(ps)
         commands.append(less)

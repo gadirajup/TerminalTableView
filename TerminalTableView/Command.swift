@@ -12,6 +12,7 @@ struct Command {
     var friendlyName: String
     var rootCommand: String
     var mustBeFirst: Bool
+    var options: [CommandOption]
     
     var summary: String {
         return "Summary here :)"
