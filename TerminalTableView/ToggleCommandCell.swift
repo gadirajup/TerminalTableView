@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommandCell: UITableViewCell {
+class ToggleCommandCell: UITableViewCell {
     let toggle = UISwitch()
     var switchChangedAction: ((Bool) -> Void)?
     

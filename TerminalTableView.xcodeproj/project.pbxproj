@@ -18,7 +18,9 @@
 		A40CD52822A22FAC00163BBC /* SelectCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CD52722A22FAC00163BBC /* SelectCommand.swift */; };
 		A40CD52A22A2305D00163BBC /* ToggleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CD52922A2305D00163BBC /* ToggleCommand.swift */; };
 		A40CD52C22A230D400163BBC /* TextCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CD52B22A230D400163BBC /* TextCommand.swift */; };
-		A40CD52E22A2326600163BBC /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CD52D22A2326600163BBC /* CommandCell.swift */; };
+		A40CD52E22A2326600163BBC /* ToggleCommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CD52D22A2326600163BBC /* ToggleCommandCell.swift */; };
+		A40CD53022A2356F00163BBC /* TextCommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CD52F22A2356F00163BBC /* TextCommandCell.swift */; };
+		A40CD53222A2D3E400163BBC /* EditCommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CD53122A2D3E400163BBC /* EditCommandViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +37,9 @@
 		A40CD52722A22FAC00163BBC /* SelectCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCommand.swift; sourceTree = "<group>"; };
 		A40CD52922A2305D00163BBC /* ToggleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCommand.swift; sourceTree = "<group>"; };
 		A40CD52B22A230D400163BBC /* TextCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCommand.swift; sourceTree = "<group>"; };
-		A40CD52D22A2326600163BBC /* CommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
+		A40CD52D22A2326600163BBC /* ToggleCommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCommandCell.swift; sourceTree = "<group>"; };
+		A40CD52F22A2356F00163BBC /* TextCommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCommandCell.swift; sourceTree = "<group>"; };
+		A40CD53122A2D3E400163BBC /* EditCommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +74,11 @@
 			children = (
 				A40CD50F22A0F7FC00163BBC /* AppDelegate.swift */,
 				A40CD51122A0F7FC00163BBC /* ViewController.swift */,
+				A40CD53122A2D3E400163BBC /* EditCommandViewController.swift */,
 				A40CD52322A0FFE600163BBC /* CommandsViewController.swift */,
 				A40CD52122A0FBF400163BBC /* Command.swift */,
-				A40CD52D22A2326600163BBC /* CommandCell.swift */,
+				A40CD52D22A2326600163BBC /* ToggleCommandCell.swift */,
+				A40CD52F22A2356F00163BBC /* TextCommandCell.swift */,
 				A40CD52522A22F5700163BBC /* CommandOption.swift */,
 				A40CD52722A22FAC00163BBC /* SelectCommand.swift */,
 				A40CD52922A2305D00163BBC /* ToggleCommand.swift */,
@@ -157,13 +163,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40CD52C22A230D400163BBC /* TextCommand.swift in Sources */,
-				A40CD52E22A2326600163BBC /* CommandCell.swift in Sources */,
+				A40CD52E22A2326600163BBC /* ToggleCommandCell.swift in Sources */,
 				A40CD52422A0FFE600163BBC /* CommandsViewController.swift in Sources */,
 				A40CD51222A0F7FC00163BBC /* ViewController.swift in Sources */,
+				A40CD53222A2D3E400163BBC /* EditCommandViewController.swift in Sources */,
 				A40CD52622A22F5700163BBC /* CommandOption.swift in Sources */,
 				A40CD52822A22FAC00163BBC /* SelectCommand.swift in Sources */,
 				A40CD52A22A2305D00163BBC /* ToggleCommand.swift in Sources */,
 				A40CD51022A0F7FC00163BBC /* AppDelegate.swift in Sources */,
+				A40CD53022A2356F00163BBC /* TextCommandCell.swift in Sources */,
 				A40CD52222A0FBF400163BBC /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
