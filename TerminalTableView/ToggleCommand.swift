@@ -13,9 +13,9 @@ class ToggleCommand: CommandOption {
     var prefix: String
     var checkedCommand: String
     var uncheckedCommand: String
-    var value: String
+    var value: Bool
     
-    init(text: String, prefix: String, checkedCommand: String, uncheckedCommand: String, value: String) {
+    init(text: String, prefix: String, checkedCommand: String, uncheckedCommand: String, value: Bool) {
         self.text = text
         self.prefix = prefix
         self.checkedCommand = checkedCommand

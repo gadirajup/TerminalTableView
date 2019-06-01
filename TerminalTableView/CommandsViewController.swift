@@ -21,8 +21,21 @@ class CommandsViewController: UITableViewController {
         let ps = Command(friendlyName: "Show all processes", rootCommand: "ps aux", mustBeFirst: true, options: [])
         let less = Command(friendlyName: "Use Scroll View", rootCommand: "less", mustBeFirst: false, options: [])
         
+        let count1 = SelectCommand(text: "Count", prefix: "", value: 0, friendlyValues: ["Letters", "Lines", "Words"], actualValues: ["-c", "-l", "-c"])
+        let count = Command(friendlyName: "Count Input", rootCommand: "wc ", mustBeFirst: false, options: [count1])
+        
+        let find1 = SelectCommand(text: "Start from", prefix: "", value: 0, friendlyValues: ["The current directory", "Your home directory", "The root directory", "Somewhere else"], actualValues: [".", "-", "/", "/path/to/your/directory"])
+        let find2 = ToggleCommand(text: "Ignore Case", prefix: "", checkedCommand: "-iname", uncheckedCommand: "-name", value: false)
+        let find3 = TextCommand(text: "Filename", prefix: "", placeHolder: "", isNumeric: false, value: "")
+        let find4 = ToggleCommand(text: "Search subdirectories", prefix: "", checkedCommand: "", uncheckedCommand: "-maxdepth 1", value: false)
+        let find5 = TextCommand(text: "Onwer username", prefix: "-user ", placeHolder: "", isNumeric: false, value: "")
+        
+        let find = Command(friendlyName: "Find files by attribute", rootCommand: "find ", mustBeFirst: true, options: [find1, find2, find3, find4, find5])
+        
         commands.append(ps)
         commands.append(less)
+        commands.append(count)
+        commands.append(find)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,6 +64,16 @@ class CommandsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cmd = commands[indexPath.row]
         terminalViewController.addCommand(cmd)
-        navigationController?.popToRootViewController(animated: true)
+        
+        if cmd.options.isEmpty {
+            navigationController?.popToRootViewController(animated: true)
+        } else {
+            let vc = EditCommandViewController(style: .grouped)
+            vc.activeCommand = cmd
+            
+            if let first = navigationController?.viewControllers.first {
+                navigationController?.setViewControllers([first, vc], animated: true)
+            }
+        }
     }
 }

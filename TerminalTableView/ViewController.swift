@@ -55,5 +55,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let command = commands[indexPath.row]
+        
+        if !command.options.isEmpty {
+            let vc = EditCommandViewController(style: .grouped)
+            vc.activeCommand = command
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
